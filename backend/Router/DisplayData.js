@@ -1,12 +1,12 @@
 const express = require('express');
-const { model } = require('mongoose');
+const mongoose = require('mongoose');
 const router = express.Router();
 
 router.post('/foodData' , (req,res)=>{
 
 try{
-    // console.log(global.food_items);
     
+    // here on call we are passing the food items and food Category in the form of array since it was globally defined so it can directly be send
        return res.send([global.food_items , global.foodCategory]);
 }
 catch(err){

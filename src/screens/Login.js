@@ -21,6 +21,7 @@ export default function Login() {
       const responseData = await response.json();
       console.log(responseData.body);
       if (responseData.success) {
+        localStorage.setItem('userEmail' , credentials.email);
         localStorage.setItem('authToken', responseData.authToken);
         navigate('/');
       } else {

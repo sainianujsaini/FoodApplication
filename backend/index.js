@@ -8,10 +8,10 @@ const port = 5000;
 const db = require('./config/mongoosejs');
 
 
+// Since the server is running on multiple ports this is to handle that
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin" , "http://localhost:3000");
-    res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
@@ -19,5 +19,6 @@ app.use((req,res,next)=>{
 app.use(express.json());
 app.use('/api' , require('./Router/CreatUser'));
 app.use('/api' , require('./Router/DisplayData'));
+app.use('/api' , require('./Router/OrderData'));
 
 app.listen(port , ()=>{console.log('App is listening on port ',port);});
