@@ -1,14 +1,14 @@
 const express = require('express');
-// body and validationResult are required to check the incoming body parts are correct and matches with the pass or not
+                                                                                                                                                                            // body and validationResult are required to check the incoming body parts are correct and matches with the pass or not
 const { body, validationResult } = require('express-validator');
-// common for router
+                                                                                                                                                                            // common for router
 const router = express.Router();
 
-// bcrypt is required to convert the pass into hash form
+                                                                                                                                                                            // bcrypt is required to convert the pass into hash form
 const bcrypt = require('bcryptjs');
-// jwt is required to allocate the authToken in local storage
+                                                                                                                                                                    // jwt is required to allocate the authToken in local storage
 const webToken = require('jsonwebtoken');
-// by this string authToken is created
+                                                                                                                                                                                            // by this string authToken is created
 const webTokenSecret = "qwertyuiopasdfghjklzxcvbnm";
 
 

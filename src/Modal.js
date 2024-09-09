@@ -3,6 +3,7 @@ import ReactDom from 'react-dom'
 
 const MODAL_STYLES = {
   position: 'fixed',
+  overflow : 'auto',
   top: '50%',
   left: '50%',
   backgroundColor: 'rgb(34,34,34)',
@@ -14,6 +15,7 @@ const MODAL_STYLES = {
 
 const OVERLAY_STYLES = {
   position: 'fixed',
+  // overflow : 'auto',
   top: 0,
   left: 0,
   right: 0,
@@ -28,7 +30,7 @@ export default function Modal({ children, onClose }) {
     <>
       <div style={OVERLAY_STYLES} />
       <div style={MODAL_STYLES}>
-        <button className='btn bg-danger fs-4' style={{ marginLeft: "90%", marginTop: "-35px" }} onClick={onClose}> X </button>
+        <button className='btn bg-danger fs-4' style={{ marginLeft: "96%" }} onClick={onClose}> X </button>
         {children}
       </div>
     </>,

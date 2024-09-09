@@ -5,7 +5,7 @@ import './App.css';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
-
+import MyOrder from './screens/MyOrder.js'
 // To implement bootstrap , js , css we require to explicitly import them to use if not working on installing 
 import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
@@ -28,6 +28,7 @@ function App() {
 <Route exact path = "/" element = {<Home/>} />
 <Route exact path = "/login" element = {<Login/>} />
 <Route exact path = "/createuser" element = {<Signup/>}/>
+<Route exact path = "/myOrder" element = {<MyOrder/>}/>
 
       </Routes>
     </div>

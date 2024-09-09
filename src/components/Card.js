@@ -11,13 +11,16 @@ export default function Card(props) {
     const [size, setSize] = useState("");
     const handleAddToCart = async () => {
         let food = []
+        // console.log(data);
         for (const item of data) {
             if (item.id === props.foodItems._id) {
                 food = item;
+                // console.log("I am called");
+                // console.log(item);
                 break;
             }
         }
-        if (food !== []) {
+        if (food) {
             if (food.size === size) {
                 await dispatch({ type: "UPDATE", id: props.foodItems._id, price: finalPrice, qty: qty });
                 return;

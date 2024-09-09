@@ -7,7 +7,7 @@ router.post('/orderData' , async (req, res)=>{
     let eId = await Order.findOne({'email' : req.body.email})
     console.log(eId);
     if(eId === null){
-        try{
+        try{    
             await Order.create({
                 email:req.body.email,
                 order_data : [data]
@@ -35,4 +35,13 @@ router.post('/orderData' , async (req, res)=>{
 
 })
 
+router.post("/myOrderData" , async (req , res)=>{
+    try{
+        let myData = await Order.findOne({"email" : req.body.email});
+        res.json({orderData : myData});
+    }
+    catch(e){
+        console.log("Server Error" , e.message);
+    }
+});
 module.exports = router;

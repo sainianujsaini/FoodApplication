@@ -5,4 +5,4 @@ mongoose.connection.db.collection("food_items").find({}).toArray()
 .then((data)=>{
     mongoose.connection.db.collection("foodCategory").find({}).toArray().then((categoryData)=>{
             global.food_items = data;
-            global.foodCategory = categoryData;}).catch((err)=>{console.log(err);})}).catch((err) => console.log(err));}).catch((err) => {console.log("Error connecting DB",err);});
+            global.foodCategory = categoryData;}).catch((err)=>{console.log(err);})}).catch((err) => console.log(err));}).catch((err) => {console.log("Error connecting DB",err);}); 

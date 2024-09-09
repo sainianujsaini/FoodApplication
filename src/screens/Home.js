@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
 
-// required components on every page
+                                                                                                                                                                                                                                                // required components on every page
 import Card from '../components/Card'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -9,7 +9,7 @@ import Navbar from '../components/Navbar'
 
 export default function Home() {
 
-  // these are hooks
+                                                                                                                                                                                                                            // these are hooks
   const [foodCat, setFoodCat] = useState([])
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
@@ -42,13 +42,13 @@ export default function Home() {
               </div>
             </div>
             <div className="carousel-item active" >
-              <img src="https://source.unsplash.com/random/900x700/?burger" className="d-block w-100  " style={{ filter: "brightness(90%)" , maxHeight:"560px"}} alt="..." />
+              <img src="https://foodish-api.com/images/burger/burger6.jpg" className="d-block w-100  " style={{ filter: "brightness(90%)" , maxHeight:"560px"}} alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/900x700/?pastry" className="d-block w-100 " style={{ filter: "brightness(90%)", maxHeight:"560px" }} alt="..." />
+              <img src="https://foodish-api.com/images/pizza/pizza23.jpg" className="d-block w-100 " style={{ filter: "brightness(90%)", maxHeight:"560px" }} alt="..." />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/900x700/?barbeque" className="d-block w-100 " style={{ filter: "brightness(90%)", maxHeight:"560px" }} alt="..." />
+              <img src="https://foodish-api.com/images/pasta/pasta16.jpg" className="d-block w-100 " style={{ filter: "brightness(90%)", maxHeight:"560px" }} alt="..." />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -63,8 +63,8 @@ export default function Home() {
       </div>
       <div className='container'>
         {
-          // checking if the array is not empty and has been initialized then iterate/map it and return the respective code
-         foodCat !== []
+                                                                                                                                                                                                                           // checking if the array is not empty and has been initialized then iterate/map it and return the respective code
+         foodCat.length != 0
             ? foodCat.map((data) => {
               return (
                 <div className='row mb-3'>
@@ -73,7 +73,7 @@ export default function Home() {
                   </div>
                   <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
                    {/* filter the items from foodItems where it matches search text and data.CategoryName */}
-                   {foodItems !== [] ? foodItems.filter(
+                   {foodItems.length != 0 ? foodItems.filter(
                     (items) => (items.CategoryName === data.CategoryName) && (items.name.toLowerCase().includes(search.toLowerCase())))
                     .map((filterItems) => {
                       return (
